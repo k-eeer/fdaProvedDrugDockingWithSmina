@@ -1,15 +1,13 @@
 
 #description:                                                                                      
                                                                                                   
-
 This scripts prepares protein and drug molecules(="ligands" in this scripts)' structures,         
 
 Then fitting one pretein and one drug molecules,caculating the affinity to get some drug molecules
 
 in some states which fit protein molecule best. Those drug molecules can be material to design new
 
-drug or therapy.
-
+drug or therapy.<br /><br />
 
 You can revise loop condition to run complete process. It might take 3-4 or more days.
 
@@ -17,11 +15,10 @@ Whole process can be divided into four parts: 1)prepare molecules,2)docking(=fit
 
 to get more reliable result, and 4)view the result.
 
-
+<br /><br /><br />
 
 
 #Prerequisites:
-
 
 1)tools:
 
@@ -37,7 +34,7 @@ Open Babel
 
 Smina
 
-
+<br /><br />
 
 2)files:
 
@@ -54,7 +51,7 @@ fda.mol2
 tf*.pdbqt
 
 tf*.pdb
-
+<br /><br />
 
 
 
@@ -63,7 +60,7 @@ tf*.pdb
 
 $sh ./workflow.sh
 
-
+<br /><br />
 
 #possible result
 
@@ -77,16 +74,16 @@ If you want to get more information about molecules of the result from Pubchem
 
 you can use buildSql.sh get url of Pubchem.
 
-
+<br /><br />
 #pubchempy should be install
 
 $sudo pip install pubchempy
 
-
+<br /><br />
 #usage:
 
 $sh ./buildSql.sh
-
+<br /><br />
 
 #if you want to check molecule page from pubchem
 
@@ -94,7 +91,7 @@ $sh ./buildSql.sh
 
 #firefox -new-tab "https://pubchem.ncbi.nlm.nih.gov/compound/$page"
 
-
+<br /><br />
 
 #possible result
 
