@@ -12,6 +12,7 @@
 ####################################################################################################
 
 #Prerequisites:
+
 #1)tools:
 #R-package 'Bio3d'
 #Gromacs
@@ -19,14 +20,14 @@
 #MGLTools
 #Open Babel
 #Smina
+
 #2)files:
 #nma.r
 #correctMode.sh
 #forAlignPml.sh
 #bindingSite.r
 #fda.mol2
-#tf[1-3].pdbqt
-#tf[1-3].pdb
+
 
 file="tf*pdbqt"
 if [[ ! -f "$file" ]]; then
