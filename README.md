@@ -48,9 +48,6 @@ bindingSite.r
 
 fda.mol2
 
-tf*.pdbqt
-
-tf*.pdb
 <br /><br />
 
 
