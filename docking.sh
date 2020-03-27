@@ -35,8 +35,10 @@ file="tf*pdbqt"
 if [[ ! -f "$file" ]]; then
     
 echo "1)prepare molecules:protein (PDB ID:3CM5)"
+
 #file:nma.r;sofrware:R package 'Bio3d'
 Rscript nma.r>nma.log 2>&1
+
 #correct the residue name (all is ALA now).;file:correctMode.sh
 sh correctMode.sh
 
@@ -52,7 +54,6 @@ EOF
 #split PDBs to single PDB.
 csplit clNma.pdb /TITLE/ -n1 {*} -f clNmas -b %1d.pdb
 rm -r clNmas0.pdb
-
 
 #superposition.;file:forAlignPml.sh;tool:Pymol
 sh forAlignPml.sh
@@ -70,7 +71,10 @@ fi
 mkdir -p fda
 cp tf*pdbqt fda.mol2 ./fda
 cd fda
+
+
 #setting docking coordinate;file bindingsite.r
+
 Rscript ../bindingSite.r>binding.log
 resid=$(sed -n '/\[/ p' binding.log |awk '{print $3}')
 resname=$(grep  "\[" binding.log|cut -c 6-9)
@@ -83,6 +87,7 @@ echo "1)prepare molecules:fda approved drug molecules."
 #download from ZINC15.use firefox.http://zinc15.docking.org/substances/subsets/fda.mol2?count=all
 #check number of molecules of download mol2 file. 
 #file:fda.mol2;tool:open babel, mgltools
+
 countLig=lig*pdbqt
 if [[ ! -f $countLig ]]; then
 
@@ -94,6 +99,7 @@ fi
 
 count=$(ls out*pdbqt|wc -l)
 if (($count<30)); then
+
 
 #get 10 random ligand for docking.
 randLig=$(ls lig*pdb |shuf -n 10)
@@ -177,10 +183,8 @@ save=$(echo ${s%\.*})
 /mgltools_x86_64Linux2_1.5.6/bin/pythonsh /mgltools_x86_64Linux2_1.5.6/MGLToolsPckgs/AutoDockTools/Utilities24/pdbqt_to_pdb.py -f $s  -o $save.pdb
 
 echo "load $save.pdb ">>viewResult.pml
-
-
-
 done
+
 #label some residues 
 echo "label resi 290 and chain A and name CA,\"(%s, %s, %s)\" % (resn, resi, chain)">>viewResult.pml
 echo "label resi 80 and chain B and name CA,\"(%s, %s, %s)\" % (resn, resi, chain)">>viewResult.pml
