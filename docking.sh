@@ -28,6 +28,8 @@
 #bindingSite.r
 #fda.mol2
 
+#_____________________________________________________________________
+#1)prepare molecules
 
 file="tf*pdbqt"
 if [[ ! -f "$file" ]]; then
@@ -101,7 +103,8 @@ do
 rm -f $l
 done
 
-
+#---------------------------------------------------------------------
+#2)docking
 
 echo "2)docking by smina"
 rm -f dockingAffinity.txt 
@@ -118,8 +121,10 @@ grep minimizedAffinity out`basename ${r} .pdbqt`${l}|awk '{print $3}'>> dockingA
 done
 done
 
+#-----------------------------------------------------------------------
+#3)recoring to get more reliable result
 
-echo "3)rerescoring to get more reliable result"
+echo "3)rescoring to get more reliable result"
 rm -f sortDocking.txt
 sort -o sortDocking.txt -gk2 dockingAffinity.txt
 rm -f rescoring.txt
@@ -144,6 +149,10 @@ done
 done
 
 fi
+
+#----------------------------------------------------------------
+
+#4)view the best 3 results with Pymol
 
 echo "4)view the best 3 results with Pymol"
 
