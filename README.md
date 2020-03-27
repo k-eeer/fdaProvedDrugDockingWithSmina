@@ -1,7 +1,6 @@
 This script is a demo to screening possible drug with the software, smina.
 
 R-package ,Bio3d and rescoring function of smina are used to improve screening accruacy. 
-
 <br />
 You can use buildSql.sh to build a MySQL table of PubChem pages of  possible drug.
 
