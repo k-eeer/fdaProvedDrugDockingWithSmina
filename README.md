@@ -1,26 +1,19 @@
+This script is a demo to screening possible drug with the software, smina.
 
-#description:                                                                                      
-                                                                                                  
-This scripts prepares protein and drug molecules(="ligands" in this scripts)' structures,         
+R-package ,Bio3d and rescoring function of smina are used to improve screening accruacy. 
 
-Then fitting one pretein and one drug molecules,caculating the affinity to get some drug molecules
+You can use buildSql.sh to build a MySQL table of PubChem pages of  possible drug.
 
-in some states which fit protein molecule best. Those drug molecules can be material to design new
+And you can revise loop condition to run complete process. It might take 3-4 or more days.
 
-drug or therapy.<br /><br />
 
-You can revise loop condition to run complete process. It might take 3-4 or more days.
-
-Whole process can be divided into four parts: 1)prepare molecules,2)docking(=fitting), 3)rescoring
-
-to get more reliable result, and 4)view the result.
 
 <br /><br /><br />
 
 
-#Prerequisites:
+# Prerequisites:
 
-1)tools:
+# 1)tools:
 
 R-package 'Bio3d'
 
@@ -36,7 +29,7 @@ Smina
 
 <br /><br />
 
-2)files:
+# 2)input files:
 
 nma.r
 
@@ -52,14 +45,14 @@ fda.mol2
 
 
 
-#usage:
+# Usage:
 
 
 $sh ./workflow.sh
 
 <br /><br />
 
-#possible result
+# Output
 
 ![](https://github.com/k-eeer/screening/blob/master/illustration/tf1Lig771.png)
 
@@ -77,7 +70,7 @@ you can use buildSql.sh get url of Pubchem.
 $sudo pip install pubchempy
 
 <br /><br />
-#usage:
+# Usage:
 
 $sh ./buildSql.sh
 <br /><br />
@@ -90,7 +83,7 @@ $sh ./buildSql.sh
 
 <br /><br />
 
-#possible result
+# Output:
 
 ![](https://github.com/k-eeer/screening/blob/master/illustration/buildSql.png)
 
