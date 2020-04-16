@@ -75,7 +75,7 @@ $sh ./buildSql.sh
 
 #if you want to check molecule page from pubchem
 
-#delete pound key of this line before execution 
+#delete pound key of the following line before execution 
 
 #firefox -new-tab "https://pubchem.ncbi.nlm.nih.gov/compound/$page"
 
