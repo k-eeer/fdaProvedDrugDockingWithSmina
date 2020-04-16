@@ -1,4 +1,4 @@
-This script is a demo to screening possible drug with the software, smina.
+This script is a demo to screening possible drug with the software, Smina.
 
 R-package ,Bio3d and rescoring function of smina are used to improve screening accruacy. 
 <br /><br />
