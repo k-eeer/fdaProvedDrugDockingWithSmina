@@ -50,7 +50,7 @@ $sh ./workflow.sh
 
 <br /><br />
 
-# Output
+# Output:
 
 ![](https://github.com/k-eeer/screening/blob/master/illustration/tf1Lig771.png)
 
