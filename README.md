@@ -60,7 +60,7 @@ $sh ./workflow.sh
 ----------------------------------------------------------------------------------------------------------------------
 If you want to get more information about molecules of the result from Pubchem
 
-you can use buildSql.sh get url of Pubchem.
+you can use buildSql.sh to get url of Pubchem.
 
 <br /><br />
 #pubchempy should be install
